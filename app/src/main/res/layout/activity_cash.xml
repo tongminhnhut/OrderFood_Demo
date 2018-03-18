@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_bg"
+    tools:context="com.tongminhnhut.orderfood_demo.CashActivity">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerCash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <info.hoang8f.widget.FButton
+        android:layout_alignParentBottom="true"
+        app:fButtonColor="@color/btnSignActive"
+        android:textColor="@android:color/white"
+        android:text="Thanh toán"
+        android:id="@+id/btnThanhToan_Cash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shadowColor="@android:color/black"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp"
+        android:layout_margin="8dp"
+        app:cornerRadius="4dp"/>
+</RelativeLayout>

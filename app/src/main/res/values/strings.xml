@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">OrderFood_Demo</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="forgot"><u>Forgot Password ?</u></string>
+    <string name="font">restaurant_font.otf</string>
+</resources>
