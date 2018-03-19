@@ -196,7 +196,7 @@ public class HomeActivity extends AppCompatActivity
         Intent server = new Intent(getApplicationContext(), ListenServer.class);
         startService(server);
 
-//        updateToken(FirebaseInstanceId.getInstance().getToken());
+        updateToken(FirebaseInstanceId.getInstance().getToken());
 
         //Slider
         setupSlider();
