@@ -142,6 +142,12 @@ public class CartActivity extends AppCompatActivity implements RecylerItemTouchH
         calendar.set(ngay, thang, nam);
         final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
+        //set Time
+        int gio = calendar.get(Calendar.HOUR_OF_DAY);
+        int phut = calendar.get(Calendar.MINUTE);
+        final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        calendar.set(0,0,0,gio,phut);
+
         alertDialog.setIcon(R.drawable.ic_shopping_cart_black_24dp);
         alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
@@ -153,6 +159,7 @@ public class CartActivity extends AppCompatActivity implements RecylerItemTouchH
                         txtTotal.getText().toString(),
                         note.getText().toString(),
                         String.valueOf(simpleDateFormat.format(calendar.getTime())),
+                        String.valueOf(sdf.format(calendar.getTime())),
                         orderList
                 );
 
@@ -198,7 +205,7 @@ public class CartActivity extends AppCompatActivity implements RecylerItemTouchH
                                 @Override
                                 public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
 
-                                        if (response.body().success == 0){
+                                        if (response.body().success == 1){
                                             Toast.makeText(CartActivity.this, "Thank you. Order Success", Toast.LENGTH_SHORT).show();
                                             finish();
                                         }else {

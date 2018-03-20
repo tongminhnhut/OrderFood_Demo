@@ -14,12 +14,13 @@ public class Requests {
     private String status ;
     private String Note ;
     private String Date ;
+    private String Time ;
     private List<Order> foods ;
 
     public Requests() {
     }
 
-    public Requests(String phone, String name, String address, String total,String note, String date ,List<Order> foods) {
+    public Requests(String phone, String name, String address, String total,String note, String date, String time ,List<Order> foods) {
         Phone = phone;
         Name = name;
         Address = address;
@@ -28,6 +29,15 @@ public class Requests {
         this.status = "0";// 0: Tại chỗ,  1:Đang ship ,   2: Đã ship
         Note = note ;
         Date = date;
+        Time = time;
+    }
+
+    public String getTime() {
+        return Time;
+    }
+
+    public void setTime(String time) {
+        Time = time;
     }
 
     public String getDate() {
