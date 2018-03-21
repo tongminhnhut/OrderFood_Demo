@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
-            android:src="@drawable/logo_eat_it"
+            android:src="@drawable/icon_order"
             android:layout_width="200dp"
             android:layout_height="200dp" />
         <TextView
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <info.hoang8f.widget.FButton
-            app:fButtonColor="@color/btnSignUp"
+            app:fButtonColor="@color/btnMainUp"
             android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:text="Sign Up"
@@ -51,8 +51,8 @@
             app:cornerRadius="4dp"/>
 
         <info.hoang8f.widget.FButton
-            app:fButtonColor="@color/btnSignActive"
-            android:textColor="@android:color/white"
+            app:fButtonColor="@color/btnMainIn"
+            android:textColor="@android:color/black"
             android:textAllCaps="false"
             android:text="Sign In"
             android:id="@+id/btnSignIn"

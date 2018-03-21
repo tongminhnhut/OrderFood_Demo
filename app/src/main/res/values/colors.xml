@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#004d40</color>
+    <color name="colorPrimary">#f000</color>
+    <color name="colorPrimaryDark">#ffd321</color>
+    <color name="colorAccent">#ed3237</color>
+
+    <!--<color name="colorPrimary">#004d40</color>
     <color name="colorPrimaryDark">#00251a</color>
-    <color name="colorAccent">#39796b</color>
+    <color name="colorAccent">#39796b</color>-->
+
 
     <color name="btnSignUp">#39796b</color>
     <color name="btnSignActive">#A9D440</color>
@@ -10,4 +15,7 @@
     <color name="overlayActionBar">#0e0d0e</color>
     
     <color name="bgDelete">#cf2f2f</color>
+
+    <color name="btnMainUp">#f000</color>
+    <color name="btnMainIn">#ffd321</color>
 </resources>

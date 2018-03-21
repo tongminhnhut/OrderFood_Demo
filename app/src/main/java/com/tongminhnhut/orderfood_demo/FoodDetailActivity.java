@@ -23,6 +23,10 @@ import com.tongminhnhut.orderfood_demo.Database.Database;
 import com.tongminhnhut.orderfood_demo.model.Foods;
 import com.tongminhnhut.orderfood_demo.model.Order;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -97,6 +101,8 @@ public class FoodDetailActivity extends AppCompatActivity {
 
                 collapsingToolbarLayout.setTitle(curentFood.getName());
                 txtName.setText(curentFood.getName());
+                DecimalFormat formatter = new DecimalFormat("#,###,###");
+//                String price = formatter.format(curentFood.getPrice());
                 txtPrice.setText(curentFood.getPrice());
                 txtDes.setText(curentFood.getDescription());
             }

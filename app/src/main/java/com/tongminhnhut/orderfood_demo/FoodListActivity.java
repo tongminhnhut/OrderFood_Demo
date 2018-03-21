@@ -33,6 +33,7 @@ import com.tongminhnhut.orderfood_demo.ViewHolder.FoodViewHolder;
 import com.tongminhnhut.orderfood_demo.model.Foods;
 import com.tongminhnhut.orderfood_demo.model.Order;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 

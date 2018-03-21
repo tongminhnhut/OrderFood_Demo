@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <info.hoang8f.widget.FButton
-            app:fButtonColor="@color/btnSignUp"
+            app:fButtonColor="@color/btnMainUp"
             android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:text="Sign Up"

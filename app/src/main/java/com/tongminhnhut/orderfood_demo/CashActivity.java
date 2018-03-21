@@ -28,6 +28,9 @@ import com.tongminhnhut.orderfood_demo.Common.Common;
 import com.tongminhnhut.orderfood_demo.ViewHolder.CashViewHolder;
 import com.tongminhnhut.orderfood_demo.model.Requests;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import info.hoang8f.widget.FButton;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -80,6 +83,29 @@ public class CashActivity extends AppCompatActivity {
             loadOrder(id_table);
         }
 
+        tab_request.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int total = 0;
+                Requests a = dataSnapshot.getValue(Requests.class);
+                for (DataSnapshot snapshot:dataSnapshot.getChildren()){
+//                    total += a;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        txtTotal = findViewById(R.id.txtTotal_cash);
+//        int total = 0;
+//        List<Requests> requests = new FirebaseRecyclerAdapter<Requests, CashViewHolder>();
+//        for (Requests item:requests){
+//            total += Integer.parseInt(item.getTotal());
+//        }
+//        txtTotal.setText(total+"");
 
         btnCash.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,8 +130,8 @@ public class CashActivity extends AppCompatActivity {
 
     }
 
-    private void loadOrder(String phone) {
-        Query query = tab_request.orderByChild("address").equalTo(phone);
+    private void loadOrder(String idTable) {
+        Query query = tab_request.orderByChild("address").equalTo(idTable);
         FirebaseRecyclerOptions<Requests> options = new FirebaseRecyclerOptions.Builder<Requests>()
                 .setQuery(query, Requests.class)
                 .build();
@@ -117,6 +143,8 @@ public class CashActivity extends AppCompatActivity {
                 viewHolder.txtStatus.setText(Common.convertCodeStatus(""+model.getStatus()));
                 viewHolder.txtTotal.setText(model.getTotal());
                 viewHolder.txtDate.setText(model.getDate());
+
+
 
                 viewHolder.btnDetail_Cash.setOnClickListener(new View.OnClickListener() {
                     @Override

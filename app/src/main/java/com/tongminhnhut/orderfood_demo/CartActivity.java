@@ -274,7 +274,7 @@ public class CartActivity extends AppCompatActivity implements RecylerItemTouchH
             for (Order item:orders){
                 total += (Integer.parseInt(deleteItem.getPrice())) * (Integer.parseInt(item.getQuanlity()));
             }
-            Locale locale = new Locale("en", "US");
+            Locale locale = new Locale("vn", "VN");
             NumberFormat fm = NumberFormat.getCurrencyInstance(locale);
             txtTotal.setText(fm.format(total));
 
@@ -290,7 +290,7 @@ public class CartActivity extends AppCompatActivity implements RecylerItemTouchH
                     for (Order item:orders){
                         total += (Integer.parseInt(deleteItem.getPrice())) * (Integer.parseInt(item.getQuanlity()));
                     }
-                    Locale locale = new Locale("en", "US");
+                    Locale locale = new Locale("vn", "VN");
                     NumberFormat fm = NumberFormat.getCurrencyInstance(locale);
                     txtTotal.setText(fm.format(total));
 
