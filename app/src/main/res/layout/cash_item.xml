@@ -80,8 +80,19 @@
                 android:layout_weight="4"
                 android:shadowColor="@color/colorPrimary"
                 app:fButtonColor="@android:color/white"
-                android:text="Detail"
+                android:text="Chi tiết"
                 android:id="@+id/btnDetail_CashItem"
+                app:cornerRadius="0dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <info.hoang8f.widget.FButton
+                app:shadowEnabled="true"
+                app:shadowHeight="4dp"
+                android:layout_weight="4"
+                android:shadowColor="@color/colorPrimary"
+                app:fButtonColor="@android:color/white"
+                android:text="Xóa"
+                android:id="@+id/btnXoa_CashItem"
                 app:cornerRadius="0dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />

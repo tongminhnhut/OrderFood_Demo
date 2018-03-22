@@ -46,7 +46,7 @@
                 </LinearLayout>
                 <info.hoang8f.widget.FButton
                     android:layout_alignParentBottom="true"
-                    app:fButtonColor="@color/btnSignActive"
+                    app:fButtonColor="@color/btnMainIn"
                     android:textColor="@android:color/white"
                     android:text="Order"
                     android:id="@+id/btnOrder"

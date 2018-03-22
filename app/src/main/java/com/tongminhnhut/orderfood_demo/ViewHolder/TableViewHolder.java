@@ -50,7 +50,7 @@ public class TableViewHolder extends RecyclerView.ViewHolder implements View.OnC
         menu.setHeaderTitle("Vui lòng chọn ");
 
         menu.add(0,0,getAdapterPosition(), Common.UPDATE);
-        menu.add(0,1,getAdapterPosition(), Common.CASH);
+//        menu.add(0,1,getAdapterPosition(), Common.CASH);
 
 
     }

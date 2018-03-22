@@ -131,7 +131,7 @@ public class CashActivity extends AppCompatActivity {
     }
 
     private void loadOrder(String idTable) {
-        Query query = tab_request.orderByChild("address").equalTo(idTable);
+        Query query = cash.orderByChild("address").equalTo(idTable);
         FirebaseRecyclerOptions<Requests> options = new FirebaseRecyclerOptions.Builder<Requests>()
                 .setQuery(query, Requests.class)
                 .build();
@@ -155,6 +155,13 @@ public class CashActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
+
+                viewHolder.btnXoa.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        deleDialog(adapter.getRef(position).getKey());
+                    }
+                });
             }
 
             @Override
@@ -168,6 +175,11 @@ public class CashActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
         adapter.startListening();
         recyclerView.setAdapter(adapter);
+    }
+
+    private void deleDialog(String key) {
+        cash.child(key).removeValue();
+        adapter.notifyDataSetChanged();
     }
 
     @Override

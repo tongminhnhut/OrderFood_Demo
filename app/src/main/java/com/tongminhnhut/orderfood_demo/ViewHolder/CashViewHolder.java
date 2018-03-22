@@ -13,7 +13,7 @@ import com.tongminhnhut.orderfood_demo.R;
 
 public class CashViewHolder extends RecyclerView.ViewHolder  {
     public TextView txtBan, txtPhone, txtTotal, txtStatus, txtDate;
-    public Button btnDetail_Cash;
+    public Button btnDetail_Cash, btnXoa;
 
 
     public CashViewHolder(View itemView) {
@@ -24,5 +24,6 @@ public class CashViewHolder extends RecyclerView.ViewHolder  {
         txtTotal = (TextView) itemView.findViewById(R.id.txtPrice_CashItem);
         txtDate = itemView.findViewById(R.id.txtDate_CashItem);
         btnDetail_Cash = itemView.findViewById(R.id.btnDetail_CashItem);
+        btnXoa = itemView.findViewById(R.id.btnXoa_CashItem);
     }
 }
