@@ -39,6 +39,7 @@ import com.tongminhnhut.orderfood_demo.model.Requests;
 import com.tongminhnhut.orderfood_demo.model.Sender;
 import com.tongminhnhut.orderfood_demo.model.Token;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -242,8 +243,9 @@ public class CartActivity extends AppCompatActivity implements RecylerItemTouchH
         for (Order order:orderList){
             total += (Integer.parseInt(order.getPrice())) * (Integer.parseInt(order.getQuanlity()));
         }
-        Locale locale = new Locale("vn", "VN");
-        NumberFormat fm = NumberFormat.getCurrencyInstance(locale);
+//        Locale locale = new Locale("vn", "VN");
+//        NumberFormat fm = NumberFormat.getCurrencyInstance(locale);
+        DecimalFormat fm = new DecimalFormat("#,###,###");
         txtTotal.setText(fm.format(total));
 
 

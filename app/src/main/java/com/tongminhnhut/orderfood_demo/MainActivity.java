@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "Barmbrack.ttf");
-        txtLogan.setTypeface(typeface);
+//        Typeface typeface = Typeface.createFromAsset(getAssets(), "Barmbrack.ttf");
+//        txtLogan.setTypeface(typeface);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +139,5 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         btnSignUp = findViewById(R.id.btnSignUp);
         btnSignIn = findViewById(R.id.btnSignIn);
-        txtLogan = findViewById(R.id.txtLogan);
     }
 }

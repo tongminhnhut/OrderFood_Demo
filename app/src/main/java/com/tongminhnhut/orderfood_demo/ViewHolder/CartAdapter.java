@@ -15,6 +15,7 @@ import com.tongminhnhut.orderfood_demo.Interface.ItemClickListener;
 import com.tongminhnhut.orderfood_demo.R;
 import com.tongminhnhut.orderfood_demo.model.Order;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,13 +63,15 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
                 for (Order item:orders){
                     total += (Integer.parseInt(item.getPrice())) * (Integer.parseInt(item.getQuanlity()));
                 }
-                Locale locale = new Locale("en", "US");
-                NumberFormat fm = NumberFormat.getCurrencyInstance(locale);
+//                Locale locale = new Locale("en", "US");
+//                NumberFormat fm = NumberFormat.getCurrencyInstance(locale);
+                DecimalFormat fm = new DecimalFormat("#,###,###");
                 cartActivity.txtTotal.setText(fm.format(total));
             }
         });
-        Locale locale = new Locale("vn", "VN");
-        NumberFormat fm = NumberFormat.getCurrencyInstance(locale);
+//        Locale locale = new Locale("vn", "VN");
+//        NumberFormat fm = NumberFormat.getCurrencyInstance(locale);
+        DecimalFormat fm = new DecimalFormat("#,###,###");
         int pirce = (Integer.parseInt(list.get(position).getPrice())) * (Integer.parseInt(list.get(position).getQuanlity()));
         holder.txtPrice.setText(fm.format(pirce));
         holder.txtName.setText(list.get(position).getProductName());

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_bg"
+    android:background="@drawable/bgorder"
     android:padding="16dp"
     android:id="@+id/relativeLayout_Cart"
     tools:context="com.tongminhnhut.orderfood_demo.CartActivity">
@@ -38,7 +38,14 @@
                         android:textColor="@android:color/white"
                         android:textSize="24sp"
                         android:text="$10,000"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginLeft="3dp"
+                        android:textSize="24sp"
+                        android:textColor="@android:color/white"
+                        android:text="VNĐ"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
 
