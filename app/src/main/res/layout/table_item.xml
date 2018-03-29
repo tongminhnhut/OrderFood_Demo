@@ -43,6 +43,37 @@
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <info.hoang8f.widget.FButton
+                android:layout_weight="1"
+                android:id="@+id/btnThanhtoan_TableItem"
+                android:shadowColor="@android:color/white"
+                app:cornerRadius="5dp"
+                app:shadowEnabled="true"
+                app:shadowHeight="5dp"
+                android:layout_marginTop="10dp"
+                app:fButtonColor="@android:color/white"
+                android:text="Thanh toán"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <info.hoang8f.widget.FButton
+                android:layout_weight="1"
+                android:id="@+id/btnReset_TableItem"
+                android:shadowColor="@android:color/white"
+                app:cornerRadius="5dp"
+                app:shadowEnabled="true"
+                app:shadowHeight="5dp"
+                android:layout_marginTop="10dp"
+                app:fButtonColor="@android:color/white"
+                android:text="Reset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
 
 
 

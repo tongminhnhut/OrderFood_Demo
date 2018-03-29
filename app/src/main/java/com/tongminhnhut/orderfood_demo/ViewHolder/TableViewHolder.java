@@ -3,6 +3,7 @@ package com.tongminhnhut.orderfood_demo.ViewHolder;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.tongminhnhut.orderfood_demo.Common.Common;
@@ -10,6 +11,8 @@ import com.tongminhnhut.orderfood_demo.Interface.ItemClickListener;
 import com.tongminhnhut.orderfood_demo.R;
 
 import org.w3c.dom.Text;
+
+import info.hoang8f.widget.FButton;
 
 /**
  * Created by tongminhnhut on 01/03/2018.
@@ -19,6 +22,7 @@ public class TableViewHolder extends RecyclerView.ViewHolder implements View.OnC
         View.OnCreateContextMenuListener
 {
     public TextView txtBan, txtStatus, txtNgay, txtGio ;
+    public FButton btncash, btnReset;
 
     private ItemClickListener itemClickListener ;
 
@@ -29,6 +33,8 @@ public class TableViewHolder extends RecyclerView.ViewHolder implements View.OnC
         txtStatus = itemView.findViewById(R.id.txtStatus_TableItem);
         txtNgay = itemView.findViewById(R.id.txtDate_TableItem);
         txtGio = itemView.findViewById(R.id.txtTime_TableItem);
+        btncash = itemView.findViewById(R.id.btnThanhtoan_TableItem);
+        btnReset = itemView.findViewById(R.id.btnReset_TableItem);
 
         itemView.setOnClickListener(this);
         itemView.setOnCreateContextMenuListener(this);

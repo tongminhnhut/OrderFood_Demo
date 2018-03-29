@@ -22,8 +22,11 @@ import android.widget.TimePicker;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.tongminhnhut.orderfood_demo.Common.Common;
 import com.tongminhnhut.orderfood_demo.Interface.ItemClickListener;
@@ -48,6 +51,7 @@ public class TableActivity extends AppCompatActivity {
     ImageButton btnDate, btnTime ;
     TextView txtDate, txtTime ;
     View view ;
+    String idTable = "" ;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -87,7 +91,7 @@ public class TableActivity extends AppCompatActivity {
 
         adapter = new FirebaseRecyclerAdapter<Table_Status, TableViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull TableViewHolder viewHolder, int position, @NonNull Table_Status model) {
+            protected void onBindViewHolder(@NonNull final TableViewHolder viewHolder, final int position, @NonNull Table_Status model) {
                 viewHolder.txtBan.setText("Bàn số "+adapter.getRef(position).getKey());
                 viewHolder.txtStatus.setText(Common.convertStatusTable(model.getStatus()+""));
                 viewHolder.txtNgay.setText(model.getNgay()+"");
@@ -100,6 +104,27 @@ public class TableActivity extends AppCompatActivity {
 //                        Common.currentRe = model ;
                         intent.putExtra("Table", adapter.getRef(position).getKey());
                         startActivity(intent);
+                    }
+                });
+                final DatabaseReference cash_tab = FirebaseDatabase.getInstance().getReference("Table");
+
+                viewHolder.btncash.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        viewHolder.btncash.setText("Complete");
+                        adapter.getItem(position).setCash_Status("1");
+                        adapter.notifyDataSetChanged(); // Them vao để cập nhật item size
+                        cash_tab.child(adapter.getRef(position).getKey()).setValue(adapter.getItem(position));
+
+                    }
+                });
+                viewHolder.btnReset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        adapter.getItem(position).setCash_Status("0");
+                        adapter.notifyDataSetChanged(); // Them vao để cập nhật item size
+                        cash_tab.child(adapter.getRef(position).getKey()).setValue(adapter.getItem(position));
+
                     }
                 });
             }
@@ -117,6 +142,7 @@ public class TableActivity extends AppCompatActivity {
         adapter.startListening();
         recyclerView.setAdapter(adapter);
     }
+
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
